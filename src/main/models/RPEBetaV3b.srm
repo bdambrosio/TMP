@@ -1,0 +1,809 @@
+<prm version="0.0">
+
+<schema>
+	<class name="PCDateTime">
+	<property name="CLASS_TYPE"><propvalue>STATIC</propvalue></property>
+
+		<var name="year">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="month">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="dayOfMonth">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="dayOfWeek">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="hour">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="minute">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="second">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="epochSec">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="epochDay">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+	</class>
+	<class name="PCPoint">
+	<property name="CLASS_TYPE"><propvalue>STATIC</propvalue></property>
+
+		<var name="x">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="y">	<type kind="Numeric"/>
+			<property name="AggMean"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="AggSum"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+	</class>
+	<class name="RPE">
+	<property name="CLASS_TYPE"><propvalue>STATIC</propvalue></property>
+
+		<var name="TurbineStagePressure">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="FinalFWTemp">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="LicenseToCalorimetricDeviation">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="TurbineControlValvePosition">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="MWe">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="UnitDiagnosisMWeReconciliation">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="UnAccountedMWe">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="BOPRaw">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="PowerStatus">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+		<var name="ModelPlantMismatch">	<type kind="Categorical"/>
+			<property name="AggMode"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Bayes"><propvalue>Boolean.TRUE</propvalue></property>
+			<property name="Interface"><propvalue>Boolean.TRUE</propvalue></property>
+		</var>
+	</class>
+</schema>
+
+<bnmodel focusClass="RPE">
+ <dynamicproperties>
+ </dynamicproperties>
+ <variables>
+  <var name=".MWe" type="discrete" xpos="308.0" ypos="180.0">
+   <statename type="String">Other</statename>
+   <statename type="NAType">NA</statename>
+   <property name="YPOS">
+    <propvalue>180.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>308.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.MWe</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+  </var>
+  <var name=".TurbineControlValvePosition" type="discrete" xpos="142.0" ypos="172.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">High</statename>
+   <statename type="String">Very_High</statename>
+   <property name="YPOS">
+    <propvalue>172.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>142.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.TurbineControlValvePosition</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+  </var>
+  <var name=".UnitDiagnosisMWeReconciliation" type="discrete" xpos="443.0" ypos="197.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">High</statename>
+   <statename type="String">Very_High</statename>
+   <property name="YPOS">
+    <propvalue>197.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>443.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.UnitDiagnosisMWeReconciliation</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+  </var>
+  <var name=".LicenseToCalorimetricDeviation" type="discrete" xpos="283.0" ypos="330.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">High</statename>
+   <statename type="String">Very_High</statename>
+   <property name="YPOS">
+    <propvalue>330.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>283.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.LicenseToCalorimetricDeviation</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+  </var>
+  <var name=".UnAccountedMWe" type="discrete" xpos="367.0" ypos="297.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">Very_High</statename>
+   <statename type="String">High</statename>
+   <property name="YPOS">
+    <propvalue>297.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>367.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.UnAccountedMWe</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+  </var>
+  <var name=".PowerStatus" type="discrete" xpos="284.0" ypos="409.0">
+   <statename type="String">Underpower</statename>
+   <statename type="String">Possible_Underpower</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">Possible_Overpower</statename>
+   <statename type="String">Overpower</statename>
+   <property name="YPOS">
+    <propvalue>409.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>284.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.PowerStatus</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+  </var>
+  <var name=".TurbineStagePressure" type="discrete" xpos="239.0" ypos="122.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">High</statename>
+   <statename type="String">Very_High</statename>
+   <property name="YPOS">
+    <propvalue>122.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>239.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.TurbineStagePressure</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+  </var>
+  <var name=".FinalFWTemp" type="discrete" xpos="91.0" ypos="226.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">High</statename>
+   <statename type="String">Very_High</statename>
+   <property name="YPOS">
+    <propvalue>226.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>91.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.FinalFWTemp</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+  </var>
+  <var name=".ModelPlantMismatch" type="discrete" xpos="501.0" ypos="337.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">High</statename>
+   <statename type="String">Very_High</statename>
+   <property name="YPOS">
+    <propvalue>337.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>501.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.ModelPlantMismatch</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+  </var>
+  <var name=".BOPRaw" type="discrete" xpos="164.0" ypos="299.0">
+   <statename type="String">Very_Low</statename>
+   <statename type="String">Low</statename>
+   <statename type="String">Normal</statename>
+   <statename type="String">Very_High</statename>
+   <statename type="String">High</statename>
+   <property name="YPOS">
+    <propvalue>299.0</propvalue>
+   </property>
+   <property name="NODETYPE">
+    <propvalue>SYNVAR</propvalue>
+   </property>
+   <property name="PACKAGE">
+    <propvalue>com.cleverset.bayes.modelerClasses.modelertemp</propvalue>
+   </property>
+   <property name="BNETNAME">
+    <propvalue></propvalue>
+   </property>
+   <property name="XPOS">
+    <propvalue>164.0</propvalue>
+   </property>
+   <property name="UTRIGGER">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="DEFINITION">
+    <propvalue>RPE.BOPRaw</propvalue>
+   </property>
+   <property name="EXPORT">
+    <propvalue>Boolean.TRUE</propvalue>
+   </property>
+   <property name="SYNTHVAR_EXPLORE_TARGET">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="FROZEN">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+   <property name="IMPORT">
+    <propvalue>Boolean.FALSE</propvalue>
+   </property>
+  </var>
+ </variables>
+ <structure>
+  <arc parent=".MWe" child=".UnAccountedMWe"/>
+  <arc parent=".UnitDiagnosisMWeReconciliation" child=".UnAccountedMWe"/>
+  <arc parent=".LicenseToCalorimetricDeviation" child=".PowerStatus"/>
+  <arc parent=".UnAccountedMWe" child=".PowerStatus"/>
+  <arc parent=".BOPRaw" child=".PowerStatus"/>
+  <arc parent=".MWe" child=".ModelPlantMismatch"/>
+  <arc parent=".UnitDiagnosisMWeReconciliation" child=".ModelPlantMismatch"/>
+ </structure>
+ <distributions>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".MWe" type="discrete"/>
+    <varset>
+      <varelem name=".MWe" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" "> 0.5 0.5</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".TurbineControlValvePosition" type="discrete"/>
+    <varset>
+      <varelem name=".TurbineControlValvePosition" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" "> 0.01 0.04 0.9 0.04 0.01</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".UnitDiagnosisMWeReconciliation" type="discrete"/>
+    <varset>
+      <varelem name=".UnitDiagnosisMWeReconciliation" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" "> 0.01 0.04 0.9 0.04 0.01</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".LicenseToCalorimetricDeviation" type="discrete"/>
+    <varset>
+      <varelem name=".LicenseToCalorimetricDeviation" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" "> 0.01 0.04 0.9 0.04 0.01</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+      <condelem name=".MWe" type="discrete"/>
+      <condelem name=".UnitDiagnosisMWeReconciliation" type="discrete"/>
+    </condset>
+    <private name=".UnAccountedMWe" type="discrete"/>
+    <varset>
+      <varelem name=".UnAccountedMWe" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" 0 0 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 1 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 2 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 3 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 4 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 0 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 1 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 2 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 3 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 4 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+      <condelem name=".LicenseToCalorimetricDeviation" type="discrete"/>
+      <condelem name=".UnAccountedMWe" type="discrete"/>
+      <condelem name=".BOPRaw" type="discrete"/>
+    </condset>
+    <private name=".PowerStatus" type="discrete"/>
+    <varset>
+      <varelem name=".PowerStatus" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" 0 0 0 "> 0.8655663962835614 0.12440005112335818 0.008684961843132888 0.0011181866983079902 2.304040516397048E-4</dpi>
+      <dpi indexes=" 0 0 1 "> 0.634487710766247 0.33235070563946273 0.029516729335915388 0.0030989527613729416 5.459014970018816E-4</dpi>
+      <dpi indexes=" 0 0 2 "> 0.5222003758386303 0.34796442277293893 0.11263145361225363 0.015042869369950604 0.002160878406226677</dpi>
+      <dpi indexes=" 0 0 3 "> 0.5274463257931614 0.28660004212877266 0.11801178205302407 0.05744464934380966 0.01049720068123236</dpi>
+      <dpi indexes=" 0 0 4 "> 0.5613456246509406 0.26076653689078855 0.08755910109725987 0.054218784898084765 0.036109952462926004</dpi>
+      <dpi indexes=" 0 1 0 "> 0.6344877107662471 0.3323507056394628 0.029516729335915388 0.003098952761372942 5.459014970018816E-4</dpi>
+      <dpi indexes=" 0 1 1 "> 0.3178615304438856 0.6068265581201452 0.06855836931142632 0.005869586656249081 8.839554682938947E-4</dpi>
+      <dpi indexes=" 0 1 2 "> 0.21973881512582136 0.5336514081627088 0.21973881512582136 0.02393195016221817 0.0029390114234303017</dpi>
+      <dpi indexes=" 0 1 3 "> 0.2225272021433648 0.44069112581333036 0.23083820875936353 0.09162884794138552 0.014314615342555632</dpi>
+      <dpi indexes=" 0 1 4 "> 0.25066769719610116 0.4243977843617158 0.18127871527330502 0.09153677701919363 0.0521190261496844</dpi>
+      <dpi indexes=" 0 2 0 "> 0.5222003758386303 0.34796442277293893 0.11263145361225363 0.0150428693699506 0.002160878406226677</dpi>
+      <dpi indexes=" 0 2 1 "> 0.21973881512582136 0.5336514081627088 0.21973881512582136 0.023931950162218166 0.0029390114234303013</dpi>
+      <dpi indexes=" 0 2 2 "> 0.1060169911130834 0.32752965476043927 0.49153332243338654 0.06810022524722004 0.006819806445870861</dpi>
+      <dpi indexes=" 0 2 3 "> 0.09036073116810756 0.2276434746661394 0.43459208799899346 0.2194474899796897 0.02795621618706975</dpi>
+      <dpi indexes=" 0 2 4 "> 0.10351454602498879 0.22294636210958885 0.34707818373084476 0.22294636210958885 0.10351454602498877</dpi>
+      <dpi indexes=" 0 3 0 "> 0.5274463257931614 0.28660004212877266 0.11801178205302404 0.05744464934380966 0.01049720068123236</dpi>
+      <dpi indexes=" 0 3 1 "> 0.22252720214336486 0.44069112581333036 0.23083820875936353 0.09162884794138552 0.014314615342555632</dpi>
+      <dpi indexes=" 0 3 2 "> 0.09036073116810756 0.22764347466613943 0.43459208799899346 0.21944748997968977 0.027956216187069758</dpi>
+      <dpi indexes=" 0 3 3 "> 0.05343787706169776 0.10978044383973504 0.2666096493250708 0.4906568712028612 0.07951515857063514</dpi>
+      <dpi indexes=" 0 3 4 "> 0.052119026149684396 0.09153677701919362 0.181278715273305 0.4243977843617158 0.2506676971961011</dpi>
+      <dpi indexes=" 0 4 0 "> 0.5613456246509407 0.2607665368907886 0.08755910109725988 0.054218784898084765 0.03610995246292602</dpi>
+      <dpi indexes=" 0 4 1 "> 0.2506676971961011 0.42439778436171577 0.181278715273305 0.0915367770191936 0.05211902614968439</dpi>
+      <dpi indexes=" 0 4 2 "> 0.10351454602498877 0.22294636210958885 0.34707818373084476 0.22294636210958885 0.10351454602498877</dpi>
+      <dpi indexes=" 0 4 3 "> 0.052119026149684396 0.09153677701919362 0.18127871527330502 0.4243977843617158 0.2506676971961011</dpi>
+      <dpi indexes=" 0 4 4 "> 0.03610995246292602 0.054218784898084765 0.08755910109725988 0.2607665368907886 0.5613456246509407</dpi>
+      <dpi indexes=" 1 0 0 "> 0.6344877107662471 0.3323507056394628 0.029516729335915388 0.003098952761372942 5.459014970018816E-4</dpi>
+      <dpi indexes=" 1 0 1 "> 0.3178615304438856 0.6068265581201452 0.06855836931142632 0.005869586656249081 8.839554682938947E-4</dpi>
+      <dpi indexes=" 1 0 2 "> 0.21973881512582136 0.5336514081627088 0.21973881512582136 0.02393195016221817 0.0029390114234303017</dpi>
+      <dpi indexes=" 1 0 3 "> 0.2225272021433648 0.44069112581333036 0.23083820875936353 0.09162884794138552 0.014314615342555632</dpi>
+      <dpi indexes=" 1 0 4 "> 0.25066769719610116 0.4243977843617158 0.18127871527330502 0.09153677701919363 0.0521190261496844</dpi>
+      <dpi indexes=" 1 1 0 "> 0.3178615304438856 0.6068265581201451 0.06855836931142631 0.00586958665624908 8.839554682938946E-4</dpi>
+      <dpi indexes=" 1 1 1 "> 0.11065950005624182 0.7699606536595458 0.11065950005624182 0.007725668332849779 9.946778951208004E-4</dpi>
+      <dpi indexes=" 1 1 2 "> 0.06692276192958842 0.5923494051784229 0.31027825985536445 0.027556431382771706 0.002893141653852416</dpi>
+      <dpi indexes=" 1 1 3 "> 0.0676040355360196 0.48795192785769714 0.32514321853038 0.10524453345950333 0.014056284616400117</dpi>
+      <dpi indexes=" 1 1 4 "> 0.07951515857063515 0.4906568712028613 0.2666096493250708 0.10978044383973508 0.05343787706169777</dpi>
+      <dpi indexes=" 1 2 0 "> 0.21973881512582136 0.5336514081627088 0.21973881512582136 0.02393195016221817 0.0029390114234303017</dpi>
+      <dpi indexes=" 1 2 1 "> 0.06692276192958842 0.592349405178423 0.31027825985536445 0.027556431382771706 0.0028931416538524163</dpi>
+      <dpi indexes=" 1 2 2 "> 0.027478491023003412 0.3094006716486227 0.590674009511007 0.06673347819872257 0.005713349618644274</dpi>
+      <dpi indexes=" 1 2 3 "> 0.02343987823439879 0.21522070015220704 0.5226788432267884 0.21522070015220704 0.02343987823439879</dpi>
+      <dpi indexes=" 1 2 4 "> 0.027956216187069758 0.21944748997968974 0.4345920879989935 0.22764347466613946 0.09036073116810757</dpi>
+      <dpi indexes=" 1 3 0 "> 0.22252720214336483 0.4406911258133304 0.2308382087593635 0.09162884794138554 0.01431461534255563</dpi>
+      <dpi indexes=" 1 3 1 "> 0.0676040355360196 0.48795192785769714 0.32514321853038 0.10524453345950333 0.014056284616400115</dpi>
+      <dpi indexes=" 1 3 2 "> 0.023439878234398786 0.21522070015220704 0.5226788432267884 0.21522070015220704 0.023439878234398786</dpi>
+      <dpi indexes=" 1 3 3 "> 0.014056284616400112 0.10524453345950331 0.3251432185303799 0.4879519278576971 0.06760403553601958</dpi>
+      <dpi indexes=" 1 3 4 "> 0.01431461534255563 0.09162884794138554 0.2308382087593635 0.4406911258133304 0.22252720214336483</dpi>
+      <dpi indexes=" 1 4 0 "> 0.2506676971961011 0.42439778436171577 0.18127871527330497 0.0915367770191936 0.05211902614968439</dpi>
+      <dpi indexes=" 1 4 1 "> 0.07951515857063515 0.4906568712028613 0.2666096493250708 0.10978044383973505 0.05343787706169777</dpi>
+      <dpi indexes=" 1 4 2 "> 0.027956216187069758 0.21944748997968977 0.43459208799899346 0.22764347466613943 0.09036073116810756</dpi>
+      <dpi indexes=" 1 4 3 "> 0.014314615342555634 0.09162884794138554 0.2308382087593636 0.4406911258133304 0.22252720214336488</dpi>
+      <dpi indexes=" 1 4 4 "> 0.01049720068123236 0.05744464934380966 0.11801178205302404 0.28660004212877266 0.5274463257931614</dpi>
+      <dpi indexes=" 2 0 0 "> 0.5222003758386303 0.34796442277293893 0.11263145361225363 0.0150428693699506 0.002160878406226677</dpi>
+      <dpi indexes=" 2 0 1 "> 0.21973881512582136 0.5336514081627088 0.21973881512582136 0.023931950162218166 0.0029390114234303013</dpi>
+      <dpi indexes=" 2 0 2 "> 0.1060169911130834 0.32752965476043927 0.49153332243338654 0.06810022524722004 0.006819806445870861</dpi>
+      <dpi indexes=" 2 0 3 "> 0.09036073116810756 0.2276434746661394 0.43459208799899346 0.2194474899796897 0.02795621618706975</dpi>
+      <dpi indexes=" 2 0 4 "> 0.10351454602498879 0.22294636210958885 0.34707818373084476 0.22294636210958885 0.10351454602498877</dpi>
+      <dpi indexes=" 2 1 0 "> 0.21973881512582136 0.5336514081627088 0.21973881512582136 0.02393195016221817 0.0029390114234303017</dpi>
+      <dpi indexes=" 2 1 1 "> 0.06692276192958842 0.592349405178423 0.31027825985536445 0.027556431382771706 0.0028931416538524163</dpi>
+      <dpi indexes=" 2 1 2 "> 0.027478491023003412 0.3094006716486227 0.590674009511007 0.06673347819872257 0.005713349618644274</dpi>
+      <dpi indexes=" 2 1 3 "> 0.02343987823439879 0.21522070015220704 0.5226788432267884 0.21522070015220704 0.02343987823439879</dpi>
+      <dpi indexes=" 2 1 4 "> 0.027956216187069758 0.21944748997968974 0.4345920879989935 0.22764347466613946 0.09036073116810757</dpi>
+      <dpi indexes=" 2 2 0 "> 0.1060169911130834 0.32752965476043927 0.49153332243338654 0.06810022524722004 0.006819806445870861</dpi>
+      <dpi indexes=" 2 2 1 "> 0.027478491023003416 0.3094006716486228 0.590674009511007 0.06673347819872257 0.005713349618644275</dpi>
+      <dpi indexes=" 2 2 2 "> 0.007674014613864862 0.10991963206390103 0.7648127066444683 0.10991963206390103 0.007674014613864862</dpi>
+      <dpi indexes=" 2 2 3 "> 0.005713349618644274 0.06673347819872255 0.5906740095110069 0.3094006716486227 0.027478491023003412</dpi>
+      <dpi indexes=" 2 2 4 "> 0.006819806445870861 0.06810022524722004 0.49153332243338654 0.32752965476043927 0.1060169911130834</dpi>
+      <dpi indexes=" 2 3 0 "> 0.09036073116810756 0.22764347466613943 0.43459208799899346 0.2194474899796897 0.027956216187069755</dpi>
+      <dpi indexes=" 2 3 1 "> 0.02343987823439879 0.21522070015220704 0.5226788432267884 0.21522070015220704 0.02343987823439879</dpi>
+      <dpi indexes=" 2 3 2 "> 0.005713349618644274 0.06673347819872257 0.590674009511007 0.3094006716486227 0.027478491023003412</dpi>
+      <dpi indexes=" 2 3 3 "> 0.0028931416538524163 0.027556431382771706 0.31027825985536445 0.592349405178423 0.06692276192958842</dpi>
+      <dpi indexes=" 2 3 4 "> 0.0029390114234303017 0.02393195016221817 0.21973881512582136 0.5336514081627088 0.21973881512582136</dpi>
+      <dpi indexes=" 2 4 0 "> 0.10351454602498877 0.22294636210958885 0.34707818373084476 0.22294636210958885 0.10351454602498879</dpi>
+      <dpi indexes=" 2 4 1 "> 0.027956216187069755 0.21944748997968977 0.4345920879989935 0.22764347466613943 0.09036073116810757</dpi>
+      <dpi indexes=" 2 4 2 "> 0.006819806445870861 0.06810022524722004 0.49153332243338654 0.32752965476043927 0.1060169911130834</dpi>
+      <dpi indexes=" 2 4 3 "> 0.0029390114234303013 0.023931950162218166 0.21973881512582136 0.5336514081627088 0.21973881512582136</dpi>
+      <dpi indexes=" 2 4 4 "> 0.0021608784062266766 0.015042869369950598 0.1126314536122536 0.3479644227729389 0.5222003758386302</dpi>
+      <dpi indexes=" 3 0 0 "> 0.5274463257931614 0.28660004212877266 0.11801178205302404 0.05744464934380966 0.01049720068123236</dpi>
+      <dpi indexes=" 3 0 1 "> 0.22252720214336486 0.44069112581333036 0.23083820875936353 0.09162884794138552 0.014314615342555632</dpi>
+      <dpi indexes=" 3 0 2 "> 0.09036073116810756 0.22764347466613943 0.43459208799899346 0.21944748997968977 0.027956216187069758</dpi>
+      <dpi indexes=" 3 0 3 "> 0.05343787706169776 0.10978044383973504 0.2666096493250708 0.4906568712028612 0.07951515857063514</dpi>
+      <dpi indexes=" 3 0 4 "> 0.052119026149684396 0.09153677701919362 0.181278715273305 0.4243977843617158 0.2506676971961011</dpi>
+      <dpi indexes=" 3 1 0 "> 0.22252720214336483 0.4406911258133304 0.2308382087593635 0.09162884794138554 0.01431461534255563</dpi>
+      <dpi indexes=" 3 1 1 "> 0.0676040355360196 0.48795192785769714 0.32514321853038 0.10524453345950333 0.014056284616400115</dpi>
+      <dpi indexes=" 3 1 2 "> 0.023439878234398786 0.21522070015220704 0.5226788432267884 0.21522070015220704 0.023439878234398786</dpi>
+      <dpi indexes=" 3 1 3 "> 0.014056284616400112 0.10524453345950331 0.3251432185303799 0.4879519278576971 0.06760403553601958</dpi>
+      <dpi indexes=" 3 1 4 "> 0.01431461534255563 0.09162884794138554 0.2308382087593635 0.4406911258133304 0.22252720214336483</dpi>
+      <dpi indexes=" 3 2 0 "> 0.09036073116810756 0.22764347466613943 0.43459208799899346 0.2194474899796897 0.027956216187069755</dpi>
+      <dpi indexes=" 3 2 1 "> 0.02343987823439879 0.21522070015220704 0.5226788432267884 0.21522070015220704 0.02343987823439879</dpi>
+      <dpi indexes=" 3 2 2 "> 0.005713349618644274 0.06673347819872257 0.590674009511007 0.3094006716486227 0.027478491023003412</dpi>
+      <dpi indexes=" 3 2 3 "> 0.0028931416538524163 0.027556431382771706 0.31027825985536445 0.592349405178423 0.06692276192958842</dpi>
+      <dpi indexes=" 3 2 4 "> 0.0029390114234303017 0.02393195016221817 0.21973881512582136 0.5336514081627088 0.21973881512582136</dpi>
+      <dpi indexes=" 3 3 0 "> 0.05343787706169776 0.10978044383973505 0.2666096493250708 0.4906568712028612 0.07951515857063514</dpi>
+      <dpi indexes=" 3 3 1 "> 0.014056284616400115 0.10524453345950331 0.3251432185303799 0.4879519278576971 0.06760403553601958</dpi>
+      <dpi indexes=" 3 3 2 "> 0.0028931416538524168 0.02755643138277171 0.3102782598553645 0.592349405178423 0.06692276192958842</dpi>
+      <dpi indexes=" 3 3 3 "> 9.946778951208004E-4 0.007725668332849779 0.11065950005624182 0.7699606536595458 0.11065950005624182</dpi>
+      <dpi indexes=" 3 3 4 "> 8.839554682938946E-4 0.00586958665624908 0.06855836931142631 0.6068265581201451 0.3178615304438856</dpi>
+      <dpi indexes=" 3 4 0 "> 0.0521190261496844 0.09153677701919363 0.18127871527330502 0.4243977843617158 0.25066769719610116</dpi>
+      <dpi indexes=" 3 4 1 "> 0.014314615342555634 0.09162884794138554 0.2308382087593636 0.4406911258133304 0.22252720214336486</dpi>
+      <dpi indexes=" 3 4 2 "> 0.0029390114234303017 0.02393195016221817 0.21973881512582136 0.5336514081627088 0.21973881512582136</dpi>
+      <dpi indexes=" 3 4 3 "> 8.839554682938946E-4 0.00586958665624908 0.06855836931142631 0.6068265581201451 0.31786153044388554</dpi>
+      <dpi indexes=" 3 4 4 "> 5.459014970018816E-4 0.003098952761372942 0.029516729335915388 0.3323507056394628 0.6344877107662471</dpi>
+      <dpi indexes=" 4 0 0 "> 0.5613456246509407 0.2607665368907886 0.08755910109725988 0.054218784898084765 0.03610995246292602</dpi>
+      <dpi indexes=" 4 0 1 "> 0.2506676971961011 0.42439778436171577 0.181278715273305 0.0915367770191936 0.05211902614968439</dpi>
+      <dpi indexes=" 4 0 2 "> 0.10351454602498877 0.22294636210958885 0.34707818373084476 0.22294636210958885 0.10351454602498877</dpi>
+      <dpi indexes=" 4 0 3 "> 0.052119026149684396 0.09153677701919362 0.18127871527330502 0.4243977843617158 0.2506676971961011</dpi>
+      <dpi indexes=" 4 0 4 "> 0.03610995246292602 0.054218784898084765 0.08755910109725988 0.2607665368907886 0.5613456246509407</dpi>
+      <dpi indexes=" 4 1 0 "> 0.2506676971961011 0.42439778436171577 0.18127871527330497 0.0915367770191936 0.05211902614968439</dpi>
+      <dpi indexes=" 4 1 1 "> 0.07951515857063515 0.4906568712028613 0.2666096493250708 0.10978044383973505 0.05343787706169777</dpi>
+      <dpi indexes=" 4 1 2 "> 0.027956216187069758 0.21944748997968977 0.43459208799899346 0.22764347466613943 0.09036073116810756</dpi>
+      <dpi indexes=" 4 1 3 "> 0.014314615342555634 0.09162884794138554 0.2308382087593636 0.4406911258133304 0.22252720214336488</dpi>
+      <dpi indexes=" 4 1 4 "> 0.01049720068123236 0.05744464934380966 0.11801178205302404 0.28660004212877266 0.5274463257931614</dpi>
+      <dpi indexes=" 4 2 0 "> 0.10351454602498877 0.22294636210958885 0.34707818373084476 0.22294636210958885 0.10351454602498879</dpi>
+      <dpi indexes=" 4 2 1 "> 0.027956216187069755 0.21944748997968977 0.4345920879989935 0.22764347466613943 0.09036073116810757</dpi>
+      <dpi indexes=" 4 2 2 "> 0.006819806445870861 0.06810022524722004 0.49153332243338654 0.32752965476043927 0.1060169911130834</dpi>
+      <dpi indexes=" 4 2 3 "> 0.0029390114234303013 0.023931950162218166 0.21973881512582136 0.5336514081627088 0.21973881512582136</dpi>
+      <dpi indexes=" 4 2 4 "> 0.0021608784062266766 0.015042869369950598 0.1126314536122536 0.3479644227729389 0.5222003758386302</dpi>
+      <dpi indexes=" 4 3 0 "> 0.0521190261496844 0.09153677701919363 0.18127871527330502 0.4243977843617158 0.25066769719610116</dpi>
+      <dpi indexes=" 4 3 1 "> 0.014314615342555634 0.09162884794138554 0.2308382087593636 0.4406911258133304 0.22252720214336486</dpi>
+      <dpi indexes=" 4 3 2 "> 0.0029390114234303017 0.02393195016221817 0.21973881512582136 0.5336514081627088 0.21973881512582136</dpi>
+      <dpi indexes=" 4 3 3 "> 8.839554682938946E-4 0.00586958665624908 0.06855836931142631 0.6068265581201451 0.31786153044388554</dpi>
+      <dpi indexes=" 4 3 4 "> 5.459014970018816E-4 0.003098952761372942 0.029516729335915388 0.3323507056394628 0.6344877107662471</dpi>
+      <dpi indexes=" 4 4 0 "> 0.03610995246292601 0.05421878489808477 0.08755910109725988 0.2607665368907886 0.5613456246509407</dpi>
+      <dpi indexes=" 4 4 1 "> 0.010497200681232359 0.057444649343809655 0.11801178205302404 0.2866000421287726 0.5274463257931613</dpi>
+      <dpi indexes=" 4 4 2 "> 0.0021608784062266766 0.0150428693699506 0.1126314536122536 0.3479644227729389 0.5222003758386302</dpi>
+      <dpi indexes=" 4 4 3 "> 5.459014970018816E-4 0.0030989527613729416 0.029516729335915388 0.33235070563946273 0.634487710766247</dpi>
+      <dpi indexes=" 4 4 4 "> 2.3040405163970477E-4 0.00111818669830799 0.008684961843132888 0.12440005112335817 0.8655663962835612</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".TurbineStagePressure" type="discrete"/>
+    <varset>
+      <varelem name=".TurbineStagePressure" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" "> 0.01 0.04 0.9 0.04 0.01</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".FinalFWTemp" type="discrete"/>
+    <varset>
+      <varelem name=".FinalFWTemp" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+      <condelem name=".MWe" type="discrete"/>
+      <condelem name=".UnitDiagnosisMWeReconciliation" type="discrete"/>
+    </condset>
+    <private name=".ModelPlantMismatch" type="discrete"/>
+    <varset>
+      <varelem name=".ModelPlantMismatch" type="discrete"/>
+    </varset>
+    <dpis>
+      <dpi indexes=" 0 0 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 1 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 2 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 3 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 0 4 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 0 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 1 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 2 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 3 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+      <dpi indexes=" 1 4 "> 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224 0.20000000298023224</dpi>
+    </dpis>
+    </dist>
+  <dist type="ci">
+    <condset>
+    </condset>
+    <private name=".BOPRaw" type="discrete"/>
+    <varset>
+      <varelem name=".BOPRaw" type="discrete"/>
+    </varset>
+    <dpis>
+    </dpis>
+    </dist>
+ </distributions>
+</bnmodel>
+
+<instances>
+</instances>
+</prm>

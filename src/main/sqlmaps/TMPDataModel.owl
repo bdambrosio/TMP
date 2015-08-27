@@ -1,0 +1,2049 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY TMP "http://www.tuuyi.com/ontologies/2015/8/TMP.owl#" >
+    <!ENTITY TMPDataModel "http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#"
+     xml:base="http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:TMP="http://www.tuuyi.com/ontologies/2015/8/TMP.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:TMPDataModel="http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#">
+    <owl:Ontology rdf:about="http://www.tuuyi.com/ontologies/2015/TMPDataModel.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#cache -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;cache"/>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#genEquals -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;genEquals"/>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#genHashCode -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;genHashCode"/>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#generateJava -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;generateJava"/>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#isDBTable -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;isDBTable"/>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#storeAsArrayFor -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;storeAsArrayFor"/>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#wrapWithJSON -->
+
+    <owl:AnnotationProperty rdf:about="&TMPDataModel;wrapWithJSON"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#ENTITY -->
+
+    <rdfs:Datatype rdf:about="&xsd;ENTITY"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anyType -->
+
+    <rdfs:Datatype rdf:about="&xsd;anyType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#hasArcs -->
+
+    <owl:ObjectProperty rdf:about="&TMP;hasArcs">
+        <rdfs:range rdf:resource="&TMP;Arc"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&TMP;ArcSet"/>
+                    <rdf:Description rdf:about="&TMP;ClassModel"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#hasNodes -->
+
+    <owl:ObjectProperty rdf:about="&TMP;hasNodes">
+        <rdfs:range rdf:resource="&TMP;Node"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;NodeList"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#hasProperties -->
+
+    <owl:ObjectProperty rdf:about="&TMP;hasProperties">
+        <rdfs:range rdf:resource="&TMP;Property"/>
+        <storeAsArrayFor rdf:resource="&TMP;PropertySet"/>
+        <rdfs:domain rdf:resource="&TMP;PropertySet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#CachedLambdas -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;CachedLambdas">
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <storeAsArrayFor rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#DOMAIN_TERM -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;DOMAIN_TERM">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;CatalogOntology"/>
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#HasResult -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;HasResult">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#TYPE_TERM -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;TYPE_TERM">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;CatalogOntology"/>
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#asArg1In -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;asArg1In">
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyRelation"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;OntologyTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#asArg2In -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;asArg2In">
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyRelation"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;OntologyTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#beliefspace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;beliefspace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Beliefspace"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Collector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#cachedPi -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;cachedPi">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#cachedPosterior -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;cachedPosterior">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#children -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;children">
+        <storeAsArrayFor rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#context -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;context">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Collector"/>
+        <rdfs:range rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphTMP"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#dist1 -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;dist1">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#dist2 -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;dist2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#down -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;down">
+        <rdfs:domain rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <rdfs:range rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;HierarchicalNode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#filterNamespace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;filterNamespace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#forTerm -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;forTerm">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ScoredTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasAbstraction -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasAbstraction">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Abstraction"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;Item"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Item"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Projection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasAbstractionMapping -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasAbstractionMapping">
+        <storeAsArrayFor rdf:resource="&TMPDataModel;AbstractItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;AbstractItem"/>
+        <rdfs:range rdf:resource="&TMPDataModel;MapReduceItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasArg1 -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasArg1">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyRelation"/>
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasArg2 -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasArg2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyRelation"/>
+        <rdfs:range rdf:resource="&TMPDataModel;OntologyTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDefaultInputChannel -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasDefaultInputChannel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDestinationCollector -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasDestinationCollector">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Collector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDistributionRows -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasDistributionRows">
+        <rdfs:domain rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:range rdf:resource="&TMPDataModel;DistributionRow"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDistributions -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasDistributions">
+        <storeAsArrayFor rdf:resource="&TMP;Node"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <storeAsArrayFor rdf:resource="&TMP;TMP"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;Query"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&TMPDataModel;GraphTMP"/>
+                    <rdf:Description rdf:about="&TMPDataModel;Query"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDomainNodes -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasDomainNodes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <storeAsArrayFor rdf:resource="&TMP;ClassModel"/>
+        <storeAsArrayFor rdf:resource="&TMP;TMP"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:range rdf:resource="&TMPDataModel;NodeList"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&TMP;ClassModel"/>
+                    <rdf:Description rdf:about="&TMP;TMP"/>
+                    <rdf:Description rdf:about="&TMPDataModel;Distribution"/>
+                    <rdf:Description rdf:about="&TMPDataModel;TMPClass"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasGraphContext -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasGraphContext">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasInstances -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasInstances">
+        <rdfs:range rdf:resource="&TMP;Instance"/>
+        <storeAsArrayFor rdf:resource="&TMP;TMP"/>
+        <rdfs:domain rdf:resource="&TMP;TMP"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasItems -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasItems">
+        <rdfs:range rdf:resource="&TMPDataModel;ItemProjection"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;SampleTerm"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasMapMethod -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasMapMethod">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Scatter"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasMapReduceIPIs -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasMapReduceIPIs">
+        <rdfs:range rdf:resource="&TMPDataModel;MapReduceInProcessItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasMapReduceItem -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasMapReduceItem">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceInProcessItem"/>
+        <rdfs:range rdf:resource="&TMPDataModel;MapReduceItem"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasMappingContext -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasMappingContext">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;MappingContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Scatter"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasModel -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasModel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:range rdf:resource="&TMPDataModel;GraphTMP"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasNodeDistMap -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasNodeDistMap">
+        <rdfs:range rdf:resource="&TMP;Node"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasOntologyTerms -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasOntologyTerms">
+        <storeAsArrayFor rdf:resource="&TMPDataModel;ItemProjection"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ItemProjection"/>
+        <rdfs:range rdf:resource="&TMPDataModel;ScoredTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasOutputContext -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasOutputContext">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:range rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasPlan -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasPlan">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasProjection -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasProjection">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Abstraction"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Projection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasPropertySet -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasPropertySet">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMP;PropertySet"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&TMP;ClassModel"/>
+                    <rdf:Description rdf:about="&TMP;NodeModel"/>
+                    <rdf:Description rdf:about="&TMP;TMP"/>
+                    <rdf:Description rdf:about="&TMPDataModel;Distribution"/>
+                    <rdf:Description rdf:about="&TMPDataModel;TMPClass"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasRangeNodes -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasRangeNodes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:range rdf:resource="&TMPDataModel;NodeList"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasRemainingEliminationNodes -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasRemainingEliminationNodes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;NodeList"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasResult -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasResult">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasResults -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasResults">
+        <rdfs:comment>a query result may not be fully reduced...</rdfs:comment>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasScoredTerm -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasScoredTerm">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;SampleTerm"/>
+        <rdfs:range rdf:resource="&TMPDataModel;ScoredTerm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasSink -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasSink">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Collector"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceInProcessItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Scatter"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasSource -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasSource">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Collector"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Scatter"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasTarget -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;hasTarget">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;NodeList"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#inputBeliefspace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;inputBeliefspace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Beliefspace"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#inputNamespace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;inputNamespace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphTMP"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#model -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;model">
+        <storeAsArrayFor rdf:resource="&TMP;Node"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Distribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#namespace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;namespace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Beliefspace"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Collector"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#nodes -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;nodes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;NodeList"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&TMP;Arc"/>
+                    <rdf:Description rdf:about="&TMPDataModel;TwoOpIndexStructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op1Rows -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;op1Rows">
+        <rdfs:range rdf:resource="&TMPDataModel;DistributionRow"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op2Rows -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;op2Rows">
+        <rdfs:range rdf:resource="&TMPDataModel;DistributionRow"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#operations -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;operations">
+        <storeAsArrayFor rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:range rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#outputBeliefspace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;outputBeliefspace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Beliefspace"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#outputNamespace -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;outputNamespace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphTMP"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:range rdf:resource="&TMPDataModel;Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#parent -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;parent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;HierarchicalNode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#resultRows -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;resultRows">
+        <rdfs:range rdf:resource="&TMPDataModel;DistributionRow"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#usesOntology -->
+
+    <owl:ObjectProperty rdf:about="&TMPDataModel;usesOntology">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&TMPDataModel;CatalogOntology"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Projection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#arity -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;arity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;HyperArc"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#changed -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;changed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>has this plan been changed since last being constructed</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#cost -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;cost">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>the cost for evaluating the local operations in this plan</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#count -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;count">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#domain -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;domain">
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#domainOfDiscourse -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;domainOfDiscourse">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;CatalogOntology"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#evidence -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;evidence">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#firstSeen -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;firstSeen">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDelta -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;hasDelta">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceInProcessItem"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasDependenceModel -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;hasDependenceModel">
+        <rdfs:domain rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasHead -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;hasHead">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;hasName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasTail -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;hasTail">
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;hasValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMP;Property"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Token"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;id">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <isDBTable rdf:datatype="&xsd;boolean">true</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <rdfs:domain rdf:resource="&TMP;Arc"/>
+        <rdfs:domain rdf:resource="&TMP;ArcSet"/>
+        <rdfs:domain rdf:resource="&TMP;ClassModel"/>
+        <rdfs:domain rdf:resource="&TMP;Instance"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:domain rdf:resource="&TMP;NodeModel"/>
+        <rdfs:domain rdf:resource="&TMP;Property"/>
+        <rdfs:domain rdf:resource="&TMP;PropertySet"/>
+        <rdfs:domain rdf:resource="&TMP;TMP"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Abstraction"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ArcPredicate"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;CatalogItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;CatalogOntology"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Channel"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Collector"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Distribution"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;DistributionList"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;DistributionRow"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Gather"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphTMP"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;HeapPriorityModel"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;HyperArc"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Item"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ItemProjection"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceInProcessItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Mapper"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MappingContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Namespace"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;NodeList"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyRelation"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Plan"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Projection"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Query"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Scatter"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ScoredTerm"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;SubjectArc"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;SubjectDomain"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TMPClass"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TMPModel"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Token"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#indexVector -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;indexVector">
+        <rdfs:domain rdf:resource="&TMPDataModel;DistributionRow"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#item -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;item">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceItem"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#itemId -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;itemId">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>The external item (catalog item, etc) of reference</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;Item"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#kind -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;kind">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>term or type</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#lastConsolidated -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;lastConsolidated">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Collector"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#nextIndex -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;nextIndex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>the next location in the sampleIndex array to draw a sampleIndex from
+if nextIndex == startIndex, we&apos;re done.
+note we have to skip values where sampleIndex[nextIndex] &gt;= hasItems.size()</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;SampleTerm"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#nodeIndex -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;nodeIndex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op1COffset -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op1COffset">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op1CSteps -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op1CSteps">
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op1ROffset -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op1ROffset">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op1RSteps -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op1RSteps">
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op2COffset -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op2COffset">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op2CSteps -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op2CSteps">
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op2ROffset -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op2ROffset">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#op2RSteps -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;op2RSteps">
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#order -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;order">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMP;Node"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#pathFromRoot -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;pathFromRoot">
+        <rdfs:domain rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <storeAsArrayFor rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#propagationMark -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;propagationMark">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;InstanceSparseGraph"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceInProcessItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#rawCatalogData -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;rawCatalogData">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <wrapWithJSON rdf:datatype="&xsd;boolean">true</wrapWithJSON>
+        <rdfs:domain rdf:resource="&TMPDataModel;CatalogItem"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#rawCount -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;rawCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Namespace"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#recursiveItemCount -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;recursiveItemCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>count of items indexed here and in all descendents under &quot;generalization&quot; relation</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyTerm"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#relation -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;relation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;OntologyRelation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#relevance -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;relevance">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>relevance of this term for this projection task</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;SampleTerm"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#remainingSpan -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;remainingSpan">
+        <storeAsArrayFor rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;HierarchicalNode"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#resultCOffset -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;resultCOffset">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#resultCSteps -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;resultCSteps">
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#resultROffset -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;resultROffset">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#resultRSteps -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;resultRSteps">
+        <rdfs:domain rdf:resource="&TMPDataModel;TwoOpIndexStructure"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#row -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;row">
+        <rdfs:domain rdf:resource="&TMPDataModel;DistributionRow"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#sampleSequence -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;sampleSequence">
+        <rdfs:comment>a reference to a shared, static array of sample indecies</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;SampleTerm"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#scatterThreshold -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;scatterThreshold">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;GraphContext"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#score -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;score">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;Item"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;MapReduceItem"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ScoredTerm"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;ScoredToken"/>
+        <rdfs:domain rdf:resource="&TMPDataModel;WeightedSubjectArc"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#startIndex -->
+
+    <owl:DatatypeProperty rdf:about="&TMPDataModel;startIndex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>the location from which to draw the first sampleIndex</rdfs:comment>
+        <rdfs:domain rdf:resource="&TMPDataModel;SampleTerm"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="&owl;topDataProperty">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#Arc -->
+
+    <owl:Class rdf:about="&TMP;Arc">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#ArcSet -->
+
+    <owl:Class rdf:about="&TMP;ArcSet">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#ClassModel -->
+
+    <owl:Class rdf:about="&TMP;ClassModel">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#Instance -->
+
+    <owl:Class rdf:about="&TMP;Instance">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#Node -->
+
+    <owl:Class rdf:about="&TMP;Node">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#NodeModel -->
+
+    <owl:Class rdf:about="&TMP;NodeModel">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#Property -->
+
+    <owl:Class rdf:about="&TMP;Property">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#PropertySet -->
+
+    <owl:Class rdf:about="&TMP;PropertySet">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMP.owl#TMP -->
+
+    <owl:Class rdf:about="&TMP;TMP">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#AbstractItem -->
+
+    <owl:Class rdf:about="&TMPDataModel;AbstractItem">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;Item"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Abstraction -->
+
+    <owl:Class rdf:about="&TMPDataModel;Abstraction">
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#ArcPredicate -->
+
+    <owl:Class rdf:about="&TMPDataModel;ArcPredicate">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#BayesNet -->
+
+    <owl:Class rdf:about="&TMPDataModel;BayesNet">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;GraphTMP"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Beliefspace -->
+
+    <owl:Class rdf:about="&TMPDataModel;Beliefspace">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#CatalogItem -->
+
+    <owl:Class rdf:about="&TMPDataModel;CatalogItem">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;Item"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#CatalogOntology -->
+
+    <owl:Class rdf:about="&TMPDataModel;CatalogOntology">
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Channel -->
+
+    <owl:Class rdf:about="&TMPDataModel;Channel">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Collector -->
+
+    <owl:Class rdf:about="&TMPDataModel;Collector">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Distribution -->
+
+    <owl:Class rdf:about="&TMPDataModel;Distribution">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#DistributionList -->
+
+    <owl:Class rdf:about="&TMPDataModel;DistributionList">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#DistributionRow -->
+
+    <owl:Class rdf:about="&TMPDataModel;DistributionRow">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Gather -->
+
+    <owl:Class rdf:about="&TMPDataModel;Gather">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <generateJava rdf:datatype="&xsd;boolean">false</generateJava>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#GraphContext -->
+
+    <owl:Class rdf:about="&TMPDataModel;GraphContext">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#GraphTMP -->
+
+    <owl:Class rdf:about="&TMPDataModel;GraphTMP">
+        <rdfs:subClassOf rdf:resource="&TMP;TMP"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#GraphTrainingContext -->
+
+    <owl:Class rdf:about="&TMPDataModel;GraphTrainingContext">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;GraphContext"/>
+        <isDBTable>false</isDBTable>
+        <generateJava>true</generateJava>
+        <cache>false</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#HeapPriorityModel -->
+
+    <owl:Class rdf:about="&TMPDataModel;HeapPriorityModel">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#HierarchicalNode -->
+
+    <owl:Class rdf:about="&TMPDataModel;HierarchicalNode">
+        <rdfs:subClassOf rdf:resource="&TMP;Node"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#HyperArc -->
+
+    <owl:Class rdf:about="&TMPDataModel;HyperArc">
+        <rdfs:subClassOf rdf:resource="&TMP;Arc"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#InstanceSparseGraph -->
+
+    <owl:Class rdf:about="&TMPDataModel;InstanceSparseGraph">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;GraphTMP"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Item -->
+
+    <owl:Class rdf:about="&TMPDataModel;Item">
+        <rdfs:comment rdf:datatype="&xsd;string">The basic servable item (catalog item, content item), as represented by Projection
+A wrapper for an item as a string + various projection-needed data</rdfs:comment>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#ItemProjection -->
+
+    <owl:Class rdf:about="&TMPDataModel;ItemProjection">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;Item"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An extension of Item (rename for consistency?), this holds the projection under some projector
+ItemProjection, AbstractItem, and CatalogItem are all separate so we don&apos;t carry around unneeded info, we are likely to be memory limited and have lots of items</rdfs:comment>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#KDTree -->
+
+    <owl:Class rdf:about="&TMPDataModel;KDTree">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;GraphTMP"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#MapReduceInProcessItem -->
+
+    <owl:Class rdf:about="&TMPDataModel;MapReduceInProcessItem">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#MapReduceItem -->
+
+    <owl:Class rdf:about="&TMPDataModel;MapReduceItem">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Mapper -->
+
+    <owl:Class rdf:about="&TMPDataModel;Mapper">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#MappingContext -->
+
+    <owl:Class rdf:about="&TMPDataModel;MappingContext">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Namespace -->
+
+    <owl:Class rdf:about="&TMPDataModel;Namespace">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#NodeList -->
+
+    <owl:Class rdf:about="&TMPDataModel;NodeList">
+        <genEquals rdf:datatype="&xsd;boolean">false</genEquals>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <genHashCode rdf:datatype="&xsd;boolean">false</genHashCode>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <storeAsArrayFor rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#OntologyRelation -->
+
+    <owl:Class rdf:about="&TMPDataModel;OntologyRelation">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#OntologyTerm -->
+
+    <owl:Class rdf:about="&TMPDataModel;OntologyTerm">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Plan -->
+
+    <owl:Class rdf:about="&TMPDataModel;Plan">
+        <rdfs:comment rdf:datatype="&xsd;string">An evaluation tree for executing a query</rdfs:comment>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Projection -->
+
+    <owl:Class rdf:about="&TMPDataModel;Projection">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;GraphTMP"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Query -->
+
+    <owl:Class rdf:about="&TMPDataModel;Query">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#RestrictedBoltzmannMachine -->
+
+    <owl:Class rdf:about="&TMPDataModel;RestrictedBoltzmannMachine">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;GraphTMP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#SampleTerm -->
+
+    <owl:Class rdf:about="&TMPDataModel;SampleTerm">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Scatter -->
+
+    <owl:Class rdf:about="&TMPDataModel;Scatter">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#ScoredTerm -->
+
+    <owl:Class rdf:about="&TMPDataModel;ScoredTerm">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+        <rdfs:comment>scored wrapper for a term </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#ScoredToken -->
+
+    <owl:Class rdf:about="&TMPDataModel;ScoredToken">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;Token"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#SubjectArc -->
+
+    <owl:Class rdf:about="&TMPDataModel;SubjectArc">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#SubjectDomain -->
+
+    <owl:Class rdf:about="&TMPDataModel;SubjectDomain">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#TMPClass -->
+
+    <owl:Class rdf:about="&TMPDataModel;TMPClass">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">true</cache>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#TMPModel -->
+
+    <owl:Class rdf:about="&TMPDataModel;TMPModel">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#Token -->
+
+    <owl:Class rdf:about="&TMPDataModel;Token">
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#TwoOpIndexStructure -->
+
+    <owl:Class rdf:about="&TMPDataModel;TwoOpIndexStructure">
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#VTDistribution -->
+
+    <owl:Class rdf:about="&TMPDataModel;VTDistribution">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;Distribution"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <rdfs:comment rdf:datatype="&xsd;boolean">false</rdfs:comment>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tuuyi.com/ontologies/2015/8/TMPDataModel.owl#WeightedSubjectArc -->
+
+    <owl:Class rdf:about="&TMPDataModel;WeightedSubjectArc">
+        <rdfs:subClassOf rdf:resource="&TMPDataModel;SubjectArc"/>
+        <cache rdf:datatype="&xsd;boolean">false</cache>
+        <isDBTable rdf:datatype="&xsd;boolean">false</isDBTable>
+        <generateJava rdf:datatype="&xsd;boolean">true</generateJava>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

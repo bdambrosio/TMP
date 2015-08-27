@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+   PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<!-- Always ensure to use the correct XML header as above! -->
+
+<!-- Note for iBatis to find this must explicitly add folder to java classpath -->
+
+<sqlMapConfig>
+ <!-- These settings control SqlMap configuration details, primarily to do with transaction
+      management. They are all optional (see the Developer Guide for more). -->
+ <settings
+   cacheModelsEnabled="true"
+   enhancementEnabled="true"
+   lazyLoadingEnabled="true"
+   maxRequests="32"
+   maxSessions="10"
+   maxTransactions="5"
+   useStatementNamespaces="false"
+ />
+ <!-- Type aliases allow you to use a shorter name for long fully qualified class names. -->
+ <typeAlias alias="order" type="testdomain.Order"/>
+ <!-- Configure a datasource to use with this SQL Map using SimpleDataSource.
+      Notice the use of the properties from the above resource -->
+
+  <!-- Configure a datasource for MarketPlace to use with this SQL Map using SimpleDataSource.
+      Notice the use of the properties from the above resource -->
+ <transactionManager type="JDBC" >
+   <dataSource type="SIMPLE">
+    <property name="JDBC.Driver" value="com.mysql.jdbc.Driver"/>
+    <property name="JDBC.ConnectionURL" value="jdbc:mysql://localhost:3306/TMPDataModelDB?autoReconnect=true"/>
+    <!--<property name="JDBC.ConnectionURL" value="jdbc:mysql://192.168.1.107:3306/TMPDataModelDB?autoReconnect=true"/>-->
+    <property name="JDBC.Username" value="ngm"/>
+    <property name="JDBC.Password" value="ngm"/>
+    <property name="Pool.PingEnabled" value="true"/> 
+    <property name="Pool.PingQuery" value="Select 1 from ENTITY"/>
+    <property name="Pool.PingConnectionsOlderThan" value="0"/>
+    <property name="Pool.PingConnectionsNotUsedFor" value="28800000"/>
+   </dataSource>
+ </transactionManager>
+
+ <sqlMap resource="maps/TMPDataModel/DBArc.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBArcSet.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBClassModel.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBClassModelHasArcs.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBClassModelHasDistributions.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBClassModelHasNodes.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBDistribution.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBDistributionHasDistributionRows.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBDistributionHasDomainNodes.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBDistributionRow.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBInstance.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBNode.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBNodeModel.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBProperty.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBPropertySet.xml" />
+ <sqlMap resource="maps/TMPDataModel/DBPropertySetHasProperties.xml" />
+  <sqlMap resource="maps/TMPDataModel/DBTMP.xml" />
+  <sqlMap resource="maps/TMPDataModel/DBTMPClass.xml" />
+  <sqlMap resource="maps/TMPDataModel/DBTMPClassHasNodes.xml" />
+</sqlMapConfig>

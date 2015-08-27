@@ -1,0 +1,50 @@
+// takes a catalog item and translates into std productAbstraction
+
+  LoadCatalog(retailerName) {
+  // abstraction and projection are mirror operations. 
+  // Abstract, in this case, is a wrapper class for ProductAbstraction.
+    projection = new Projection();
+    abstraction = new Abstraction(); 
+    catalogOntology = new CatalogOntology(retailerName);
+    projection.setHasAbstraction(abstraction);
+    projection.setUsesOntology(catalogOntology);
+    projection.useDefaultProjector();
+    abstraction.setHasProjection(projection);
+    abstraction.useDefaultAbstractor();
+  }
+
+
+    LoadCatalog myParser = new LoadCatalog(retailerName);
+
+    /** build the projection model (ie, load the catalog) **/
+    try {
+      myParser.parse(contentFile);
+      
+      ....for each item
+      // takes a catalog item and translates into std productAbstraction
+        AbstractItem abstractItem = abstraction.abstractItem(catalogItem); 
+        
+        // takes a set of productAbstraction tokens for an item and parses/processes them into the projection structures.
+        projection.indexItem(abstractItem);
+        
+        // not needed by projection, only if useful locally
+        items.add(abstractItem); 
+      ....
+      
+    } catch (Exception e) {
+      logWriter.warn("Parse exception, presuming eof "+ e.getMessage());
+    }
+      /** post processing after loading catalog **/
+      myParser.catalogOntology.processCatalog();
+      
+      /** catalog is now ready, run 100 sample projection requests **/
+      GraphContext context = new GraphContext();
+      for (int i = 0; i < 100; i++) {
+      /** pick a random item to use as source for projection target tokens *
+       *  note we won't usually actually have an item as the source of the projection target tokens, *
+       *  this is just to illustrate use *
+      **/
+        AbstractItem target = myParser.sample(); 
+        myParser.projection.getProjector().project(context, target, 10, 100000000000L);
+      }
+    System.exit(0);
